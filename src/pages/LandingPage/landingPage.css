@@ -1,0 +1,44 @@
+.main-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.md-pd {
+  padding: 2rem;
+}
+.landingPage-content-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-items: space-between;
+}
+.color-primary {
+  color: var(--COLOR-PRIMARY);
+}
+.md-top-margin {
+  margin-top: 3rem;
+}
+.lg-note-margin {
+  margin-top: 12rem;
+  margin-bottom: 12rem;
+}
+.md-sub-head {
+  font-weight: 700;
+  font-size: 3.2rem;
+}
+.sm-margin {
+  margin-top: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 2.7rem;
+}
+.btn-width {
+  width: fit-content;
+}
+.sm-pd {
+  padding: 1rem;
+}
+.image-container {
+  width: 100%;
+}

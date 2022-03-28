@@ -1,5 +1,6 @@
 import heroSvg from "../../Asset/Svg/hero.svg";
 import "./landingPage.css";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
@@ -18,7 +19,9 @@ const LandingPage = () => {
             efficiency without any efforts.
           </p>
         </div>
-        <button className='button btn-width sm-pd'>Start Taking Notes</button>
+        <Link to='/homePage'>
+          <button className='button btn-width sm-pd'>Start Taking Notes</button>
+        </Link>
       </div>
       <img src={heroSvg} alt='svg' />
     </div>

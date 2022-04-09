@@ -1,0 +1,15 @@
+.sidebar {
+  grid-area: sidebar;
+  border-right: 1px solid black;
+}
+.md-pd {
+  padding: 1rem;
+}
+.sidebar-heading {
+  list-style: none;
+  /* background-color: var(--darkerofseconadary); */
+  cursor: pointer;
+}
+.sidebar-heading :hover {
+  background-color: var(--COLOR-SECONDARY);
+}

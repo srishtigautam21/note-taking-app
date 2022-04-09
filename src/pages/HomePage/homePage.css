@@ -1,0 +1,22 @@
+.home-page {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+}
+.grid-container {
+  grid-template-columns: 0.5fr 2fr;
+  grid-template-rows: 0.5fr 3fr 1fr;
+  grid-template-areas:
+    "navbar navbar"
+    "sidebar main-content"
+    "sidebar main-content"
+    "main-footer main-footer";
+}
+
+.main-content {
+  grid-area: main-content;
+}
+.main-footer {
+  grid-area: main-footer;
+  border-top: 1px solid black;
+}

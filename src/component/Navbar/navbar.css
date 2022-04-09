@@ -1,0 +1,32 @@
+.navbar {
+  grid-area: navbar;
+  box-shadow: 2px 2px 10px var(--BOX-SHADOW-LIGHTER);
+}
+.nav-padding {
+  padding: 0 2rem 0 2rem;
+}
+.icons-alignment {
+  /* margin: 2.5rem 3rem 0 0; */
+  text-decoration: none;
+  list-style: none;
+}
+.link-alignment {
+  margin: 4.9rem 7rem 0 0;
+}
+.ecom-link-color {
+  color: var(--COLOR-SOCIAL-ICON);
+}
+.home-alignment {
+  margin: 4.9rem 2rem 0 0;
+}
+.ecom-input {
+  max-width: 25rem;
+  width: 100%;
+}
+.link:hover {
+  cursor: pointer;
+  color: var(--PRIMARY-HOVER);
+}
+/* .lg-margin-top {
+  margin-top: 4.5rem;
+} */

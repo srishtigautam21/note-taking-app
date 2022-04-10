@@ -1,11 +1,11 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import { LandingPage, HomePage, Archive, Labels, Trash } from "./pages";
 
 function App() {
-  const { pathname } = useLocation();
-  console.log(pathname);
+  // const { pathname } = useLocation();  //future TODO
+
   return (
     <>
       {/* {pathname !== "/" && <Navbar />} */}

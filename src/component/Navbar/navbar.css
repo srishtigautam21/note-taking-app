@@ -6,7 +6,6 @@
   padding: 0 2rem 0 2rem;
 }
 .icons-alignment {
-  /* margin: 2.5rem 3rem 0 0; */
   text-decoration: none;
   list-style: none;
 }
@@ -27,6 +26,3 @@
   cursor: pointer;
   color: var(--PRIMARY-HOVER);
 }
-/* .lg-margin-top {
-  margin-top: 4.5rem;
-} */

@@ -1,5 +1,3 @@
-// import { Navbar } from "../../component/Navbar/Navbar";
-// import { Sidebar } from "../../component/Sidebar/Sidebar";
 import { Navbar, Sidebar } from "../../component";
 import "./homePage.css";
 

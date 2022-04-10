@@ -6,7 +6,7 @@ import "./homePage.css";
 const HomePage = () => {
   return (
     <>
-      <div class='home-page grid-container'>
+      <div className='home-page grid-container'>
         {/* <div class='navbar'>My notes</div> */}
         <Navbar />
         <Sidebar />
@@ -16,8 +16,8 @@ const HomePage = () => {
           <p>Trash</p>
           <p>Archive</p>
         </div> */}
-        <div class='main-content'>Main</div>
-        <div class='main-footer'>Footer</div>
+        <div className='main-content'>Main</div>
+        <div className='main-footer'>Footer</div>
       </div>
     </>
   );

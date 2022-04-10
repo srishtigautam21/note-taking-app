@@ -7,28 +7,14 @@ const Sidebar = () => {
       ? "active-link md-pd aside-heading  "
       : "inactive-link md-pd aside-heading  ";
   };
-  // const isActiveIcon = ({ isActive }) => {
-  //   console.log(isActive);
-  //   return isActive ? { backgroundColor: "green" } : { backgroundColor: "" };
-  // };
-  // `md-pd aside-heading`
+
   return (
     <>
       <div className='sidebar md-margin'>
-        <NavLink
-          to='/homePage'
-          // style={isActiveIcon}
-          className={activeStyle}
-        >
+        <NavLink to='/homePage' className={activeStyle}>
           Home
         </NavLink>
-        <NavLink
-          to='/labels'
-          // className={isActiveIcon}
-          // style={({ isActive }) => (isActive ? activeStyle : "")}
-
-          className={activeStyle}
-        >
+        <NavLink to='/labels' className={activeStyle}>
           Labels
         </NavLink>
         <NavLink to='/archive' className={activeStyle}>

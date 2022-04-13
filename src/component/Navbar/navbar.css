@@ -52,7 +52,7 @@
   text-decoration: none;
   padding: 5px;
 }
-.login:hover {
+.login-link:hover {
   color: var(--NOTIFICATION-COLOR);
 }
 .profile:hover {

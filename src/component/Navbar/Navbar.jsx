@@ -24,7 +24,7 @@ const Navbar = () => {
             </Link>
             {open && (
               <div className='dropdown-menu'>
-                <Link className='dropdown-content login' to='/login'>
+                <Link className='dropdown-content login-link' to='/login'>
                   Login
                 </Link>
                 <Link className='dropdown-content profile' to='/homePage'>

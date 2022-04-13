@@ -1,9 +1,10 @@
 import "./navbar.css";
-
+import { useState } from "react";
 import { UserIcon } from "../../Asset/Svg/allsvg";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
   return (
     <div className='navbar'>
       <nav className='nav-component nav-padding'>
@@ -13,9 +14,35 @@ const Navbar = () => {
           </Link>
         </div>
         <li className='icons-alignment'>
-          <Link className='link ecom-link-color' to='/homePage'>
-            <UserIcon className='nav-icons' />
-          </Link>
+          <div className='dropdown'>
+            <Link
+              className='link ecom-link-color'
+              to='/homePage'
+              onClick={() => setOpen(!open)}
+            >
+              <UserIcon className='nav-icons' />
+            </Link>
+            {open && (
+              <div className='dropdown-menu'>
+                <Link className='dropdown-content login' to='/login'>
+                  Login
+                </Link>
+                <Link className='dropdown-content profile' to='/homePage'>
+                  Profile
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* {open &&
+            function dropDownMenu() {
+              return (
+                <div className='menu-items'>
+                  <Link to='/login'>Login</Link>
+                  <Link to='/homePage'>Profile</Link>
+                </div>
+              );
+            }} */}
         </li>
       </nav>
     </div>

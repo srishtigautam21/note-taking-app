@@ -18,7 +18,7 @@ const Navbar = () => {
             <Link
               className='link ecom-link-color'
               to='/homePage'
-              onClick={() => setOpen(!open)}
+              onClick={() => setOpen((visible) => !visible)}
             >
               <UserIcon className='nav-icons' />
             </Link>

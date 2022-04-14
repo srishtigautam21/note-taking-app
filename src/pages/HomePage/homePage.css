@@ -16,7 +16,3 @@
 .main-content {
   grid-area: main-content;
 }
-.main-footer {
-  grid-area: main-footer;
-  border-top: 1px solid black;
-}

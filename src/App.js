@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-
+import Mockman from "mockman-js";
 import {
   LandingPage,
   HomePage,
@@ -24,6 +24,7 @@ function App() {
         <Route path='/labels' element={<Labels />} />
         <Route path='/trash' element={<Trash />} />
         <Route path='/login' element={<LoginPage />} />
+        <Route path='/mockman' element={<Mockman />} />
       </Routes>
     </>
   );

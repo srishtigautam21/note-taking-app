@@ -9,7 +9,6 @@ const HomePage = () => {
         <Sidebar />
 
         <div className='main-content'>Main</div>
-        <div className='main-footer'>Footer</div>
       </div>
     </>
   );

@@ -33,16 +33,6 @@ const Navbar = () => {
               </div>
             )}
           </div>
-
-          {/* {open &&
-            function dropDownMenu() {
-              return (
-                <div className='menu-items'>
-                  <Link to='/login'>Login</Link>
-                  <Link to='/homePage'>Profile</Link>
-                </div>
-              );
-            }} */}
         </li>
       </nav>
     </div>

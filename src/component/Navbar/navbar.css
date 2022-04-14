@@ -32,7 +32,6 @@
 .dropdown-menu {
   position: absolute;
   right: 0;
-  top: calc(100%, 5rem);
   background-color: var(--COLOR-SECONDARY);
   color: var(--COLOR-SOCIAL-ICON);
   padding: 1rem;

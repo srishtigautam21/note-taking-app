@@ -3,11 +3,11 @@ import { Navbar, Sidebar } from "../../component";
 const Labels = () => {
   return (
     <>
-      <div class='home-page grid-container'>
+      <div className='home-page grid-container'>
         <Navbar />
         <Sidebar />
-        <div class='main-content'>Labels</div>
-        <div class='main-footer'>Footer</div>
+        <div className='main-content'>Labels</div>
+        <div className='main-footer'>Footer</div>
       </div>
     </>
   );

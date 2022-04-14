@@ -7,9 +7,7 @@ const HomePage = () => {
       <div className='home-page grid-container'>
         <Navbar />
         <Sidebar />
-
         <div className='main-content'>Main</div>
-        <div className='main-footer'>Footer</div>
       </div>
     </>
   );

@@ -16,3 +16,19 @@
 .main-content {
   grid-area: main-content;
 }
+.main-display {
+  display: flex;
+  flex-direction: column;
+}
+.inner-container {
+  padding: 3rem 2rem 2rem 1.5rem;
+  min-height: 100%;
+}
+/* .center-align {
+  display: flex;
+  justify-content: center;
+}
+.button-style {
+  display: flex;
+  justify-content: center;
+} */

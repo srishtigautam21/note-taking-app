@@ -1,0 +1,5 @@
+.add-saved-note {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+}

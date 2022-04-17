@@ -23,7 +23,6 @@ const Sidebar = () => {
         <NavLink to='/trash' className={activeStyle}>
           Trash
         </NavLink>
-        <button className='md-pd '>Create New Note</button>
       </div>
     </>
   );

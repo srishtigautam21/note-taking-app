@@ -1,0 +1,45 @@
+.top-margin {
+  margin-top: 3rem;
+}
+.center-align {
+  display: flex;
+  justify-content: center;
+}
+/* .button-style {
+  display: flex;
+  justify-content: center;
+} */
+.add-note {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  position: relative;
+}
+.border {
+  border-radius: 1rem;
+  border: 1px solid var(--COLOR-BLACK);
+}
+.no-border-note {
+  border: 0;
+  border-radius: 1rem;
+}
+.pd-md {
+  padding: 2rem 0 5px 2rem;
+}
+.no-border-note:focus {
+  outline: none;
+}
+.save-btn {
+  width: 10%;
+  padding: 5px;
+  background-color: var(--COLOR-WHITE);
+  font-size: 1.5rem;
+  margin: 8px;
+  border-radius: 1rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.save-btn:hover {
+  background-color: var(--COLOR-SECONDARY);
+}

@@ -12,7 +12,6 @@
     "sidebar main-content"
     "main-footer main-footer";
 }
-
 .main-content {
   grid-area: main-content;
 }
@@ -22,23 +21,10 @@
 }
 .inner-container {
   max-width: 96rem;
-  /* margin-left: auto;
-  margin-right: auto; */
   padding: 1.5rem 1.5rem;
 }
 .note-list {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  /* display: flex;
-  flex-wrap: wrap;
-  max-width: 25rem; */
 }
-/* .center-align {
-  display: flex;
-  justify-content: center;
-}
-.button-style {
-  display: flex;
-  justify-content: center;
-} */

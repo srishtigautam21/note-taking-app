@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { AddNote, Navbar, Sidebar, SavedNote } from "../../component";
 import "./homePage.css";
 import { useNote } from "../../context/NoteContext";
@@ -11,7 +10,6 @@ const HomePage = () => {
         <Navbar />
         <Sidebar />
         <div className='main-content main-display'>
-          {/* {isNoteVisible ? ( */}
           <AddNote />
           <div className='inner-container'>
             <div className='note-list'>
@@ -20,22 +18,6 @@ const HomePage = () => {
               })}
             </div>
           </div>
-
-          {/* <div className='inner-container'>
-            <SavedNote />
-            <SavedNote />
-            <SavedNote />
-            <SavedNote />
-          </div> */}
-
-          {/* ) : (
-            <button
-              onClick={() => setIsNoteVisisble((note) => !note)}
-              className='button-style'
-            >
-              Create New Note
-            </button>
-          )} */}
         </div>
       </div>
     </>

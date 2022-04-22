@@ -12,8 +12,6 @@ const AddNote = () => {
     mainContent: "",
   };
   const [noteContent, setNoteContent] = useState(initialState);
-  // const [title, setTitle] = useState("");
-  // const [text, setText] = useState("");
   return (
     <div className='top-margin center-align'>
       {isNoteVisible ? (
@@ -85,11 +83,6 @@ const AddNote = () => {
               }))
             }
           />
-          {/* {title !== "" && text !== "" ? (
-            <button className='no-border-note save-btn'>Save</button>
-          ) : (
-            <>
-              <p>Add discription and title</p> */}
           <button
             className='no-border save-btn'
             onClick={() => {
@@ -100,8 +93,6 @@ const AddNote = () => {
           >
             Save
           </button>
-          {/* </>
-          )} */}
         </div>
       ) : (
         <button

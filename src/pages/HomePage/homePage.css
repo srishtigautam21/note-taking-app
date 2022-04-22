@@ -12,7 +12,19 @@
     "sidebar main-content"
     "main-footer main-footer";
 }
-
 .main-content {
   grid-area: main-content;
+}
+.main-display {
+  display: flex;
+  flex-direction: column;
+}
+.inner-container {
+  max-width: 96rem;
+  padding: 1.5rem 1.5rem;
+}
+.note-list {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 }

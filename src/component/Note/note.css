@@ -1,0 +1,81 @@
+.top-margin {
+  margin-top: 3rem;
+}
+.center-align {
+  display: flex;
+  justify-content: center;
+}
+.add-note {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  position: relative;
+}
+.border {
+  border-radius: 1rem;
+  border: 1.5px solid var(--COLOR-PRIMARY);
+}
+.input-container {
+  display: flex;
+  justify-content: space-between;
+}
+.border-note {
+  border-radius: 1rem;
+  border: 1px solid var(--COLOR-BLACK);
+}
+.input-margin {
+  margin: 7px;
+}
+.pd-md {
+  padding: 2rem 0 5px 2rem;
+}
+.sm-pd {
+  padding: 5px;
+}
+.border-note:focus {
+  outline: none;
+}
+.no-border {
+  border: 0;
+  border-radius: 1rem;
+}
+.no-border:focus {
+  outline: none;
+}
+.title-input {
+  width: 20vw;
+  max-height: 9vh;
+}
+.tags {
+  width: 16vw;
+  max-height: 9vh;
+}
+.priority {
+  width: 16vw;
+  max-height: 9vh;
+}
+.save-btn {
+  width: 10%;
+  padding: 5px;
+  background-color: var(--COLOR-WHITE);
+  font-size: 1.5rem;
+  margin: 8px;
+  border-radius: 1rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.save-btn:hover {
+  background-color: var(--COLOR-SECONDARY);
+}
+.note-button-style {
+  font-weight: 700;
+  width: 15rem;
+  padding: 1rem;
+  border: 0;
+  background-color: var(--darkerofseconadary);
+}
+.note-button-style:hover {
+  box-shadow: 0 2px 5px 0 var(--BOX-SHADOW-LIGHTER);
+  cursor: pointer;
+}

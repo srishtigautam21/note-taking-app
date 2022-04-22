@@ -1,9 +1,10 @@
 // import { useState } from "react";
 import { AddNote, Navbar, Sidebar, SavedNote } from "../../component";
 import "./homePage.css";
+import { useNote } from "../../context/NoteContext";
 
 const HomePage = () => {
-  // const [isNoteVisible, setIsNoteVisisble] = useState(false);
+  const { notes } = useNote();
   return (
     <>
       <div className='home-page grid-container'>
@@ -13,8 +14,19 @@ const HomePage = () => {
           {/* {isNoteVisible ? ( */}
           <AddNote />
           <div className='inner-container'>
-            <SavedNote />
+            <div className='note-list'>
+              {notes.map((note) => {
+                return <SavedNote key={note._id} note={note} />;
+              })}
+            </div>
           </div>
+
+          {/* <div className='inner-container'>
+            <SavedNote />
+            <SavedNote />
+            <SavedNote />
+            <SavedNote />
+          </div> */}
 
           {/* ) : (
             <button

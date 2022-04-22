@@ -1,23 +1,31 @@
 import "./savedNote.css";
+import { DeleteIcon, ArchiveIcon, EditIcon } from "../../Asset/Svg/allsvg";
 
-const SavedNote = () => {
+const SavedNote = ({ note }) => {
+  const { title, priority, tags, mainContent } = note;
   return (
     <div>
-      <div className='add-saved-note '>
-        <input
-          className='no-border-note pd-md'
-          placeholder='Title'
-          type='text'
-        />
-        <textarea
-          className='no-border-note pd-md'
-          placeholder='Add Note...'
-          type='text'
-        />
-        <button>delete</button>
-        <button>Archive</button>
-        <button>Edit</button>
-        {/* <button className='no-border-note save-btn'>Save</button> */}
+      <div className='add-saved-note'>
+        <div className='note-title'>
+          {title}
+          <div className='tag-chips'># {tags}</div>
+        </div>
+        <div className='note-text'>{mainContent}</div>
+        <div className='date-priority'>
+          <div>17/04/22</div>
+          <div className='priority-chips'>{priority}</div>
+        </div>
+        <div className='button-display'>
+          <button className='note-btn'>
+            <DeleteIcon />
+          </button>
+          <button className='note-btn'>
+            <ArchiveIcon />
+          </button>
+          <button className='note-btn'>
+            <EditIcon />
+          </button>
+        </div>
       </div>
     </div>
   );

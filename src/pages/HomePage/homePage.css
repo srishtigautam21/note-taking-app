@@ -21,8 +21,18 @@
   flex-direction: column;
 }
 .inner-container {
-  padding: 3rem 2rem 2rem 1.5rem;
-  min-height: 100%;
+  max-width: 96rem;
+  /* margin-left: auto;
+  margin-right: auto; */
+  padding: 1.5rem 1.5rem;
+}
+.note-list {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  /* display: flex;
+  flex-wrap: wrap;
+  max-width: 25rem; */
 }
 /* .center-align {
   display: flex;

@@ -6,6 +6,7 @@ const NoteContext = createContext({});
 
 const NoteProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
+  const [deletedNotes, setDeletedNotes] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -30,8 +31,39 @@ const NoteProvider = ({ children }) => {
       console.log(e);
     }
   };
+  const moveToTrash = (note) => {
+    setDeletedNotes((prev) => [...prev, note]);
+    console.log("deleted note list", deletedNotes);
+  };
+  const deleteNoteApiCall = async (notesId, note) => {
+    // setDeletedNotes(note);
+    const encodedToken = localStorage.getItem("token");
+    const config = {
+      headers: {
+        authorization: encodedToken,
+      },
+    };
+    try {
+      const response = await axios.delete(`/api/notes/${notesId}`, config);
+      // setDeletedNotes(response.data.notes);
+      setNotes(response.data.notes);
+      console.log("delete Api", response.data.notes);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
-    <NoteContext.Provider value={{ addNotes, notes }}>
+    <NoteContext.Provider
+      value={{
+        addNotes,
+        notes,
+        moveToTrash,
+        deletedNotes,
+        deleteNoteApiCall,
+        setDeletedNotes,
+      }}
+    >
       {children}
     </NoteContext.Provider>
   );

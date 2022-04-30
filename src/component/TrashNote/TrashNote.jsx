@@ -9,7 +9,6 @@ const TrashNote = ({ deletedNotes }) => {
     setDeletedNotes((prev) => prev.filter((note) => note._id !== noteId));
   };
   return (
-    // <div className='trash-container'>
     <div className='add-saved-note'>
       <div className='note-title'>
         {title}
@@ -38,7 +37,6 @@ const TrashNote = ({ deletedNotes }) => {
         </button>
       </div>
     </div>
-    // </div>
   );
 };
 export { TrashNote };

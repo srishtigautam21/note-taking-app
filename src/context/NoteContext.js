@@ -33,10 +33,8 @@ const NoteProvider = ({ children }) => {
   };
   const moveToTrash = (note) => {
     setDeletedNotes((prev) => [...prev, note]);
-    console.log("deleted note list", deletedNotes);
   };
   const deleteNoteApiCall = async (notesId, note) => {
-    // setDeletedNotes(note);
     const encodedToken = localStorage.getItem("token");
     const config = {
       headers: {
@@ -45,9 +43,8 @@ const NoteProvider = ({ children }) => {
     };
     try {
       const response = await axios.delete(`/api/notes/${notesId}`, config);
-      // setDeletedNotes(response.data.notes);
+
       setNotes(response.data.notes);
-      console.log("delete Api", response.data.notes);
     } catch (e) {
       console.log(e);
     }

@@ -4,7 +4,7 @@ import "./trash.css";
 
 const Trash = () => {
   const { deletedNotes } = useNote();
-  // const { title, priority, tags, mainContent } = notes;
+
   return (
     <>
       <div className='home-page grid-container'>

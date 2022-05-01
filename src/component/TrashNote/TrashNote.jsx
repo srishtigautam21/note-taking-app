@@ -1,10 +1,11 @@
 import { DeleteIcon, ArchiveIcon, UndoIcon } from "../../Asset/Svg/allsvg";
 import "./trashNote.css";
-import { useNote } from "../../context/NoteContext";
+import { useNote, useDeleteNote } from "../../context";
 
 const TrashNote = ({ deletedNotes }) => {
   const { title, priority, tags, mainContent, _id } = deletedNotes;
-  const { addNotes, setDeletedNotes } = useNote();
+  const { addNotes } = useNote();
+  const { setDeletedNotes } = useDeleteNote();
   const deleteNotefromTrash = (noteId) => {
     setDeletedNotes((prev) => prev.filter((note) => note._id !== noteId));
   };

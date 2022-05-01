@@ -1,9 +1,11 @@
 import { Navbar, Sidebar, TrashNote } from "../../component";
-import { useNote } from "../../context/NoteContext";
+// import { useNote } from "../../context/NoteContext";
+import { useDeleteNote } from "../../context";
 import "./trash.css";
 
 const Trash = () => {
-  const { deletedNotes } = useNote();
+  // const { deletedNotes } = useNote();
+  const { deletedNotes } = useDeleteNote();
 
   return (
     <>

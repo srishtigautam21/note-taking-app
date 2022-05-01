@@ -1,10 +1,12 @@
 import "./savedNote.css";
 import { DeleteIcon, ArchiveIcon, EditIcon } from "../../Asset/Svg/allsvg";
-import { useNote } from "../../context/NoteContext";
+// import { useNote } from "../../context/NoteContext";
+import { useDeleteNote } from "../../context";
 
 const SavedNote = ({ note }) => {
   const { title, priority, tags, mainContent, _id } = note;
-  const { deleteNoteApiCall, moveToTrash } = useNote();
+  // const { deleteNoteApiCall, moveToTrash } = useNote();
+  const { deleteNoteApiCall, moveToTrash } = useDeleteNote();
   return (
     <div>
       <div className='add-saved-note'>
@@ -28,7 +30,10 @@ const SavedNote = ({ note }) => {
             <DeleteIcon />
             <span className='tooltiptext'>Delete note</span>
           </button>
-          <button className='note-btn tooltip'>
+          <button
+            className='note-btn tooltip'
+            // onClick={() => moveToArchive(_id, note)}
+          >
             <ArchiveIcon />
             <span className='tooltiptext'>Archive note</span>
           </button>

@@ -46,4 +46,14 @@ function EditIcon(props) {
   );
 }
 
-export { UserIcon, DeleteIcon, ArchiveIcon, EditIcon };
+function UndoIcon(props) {
+  return (
+    <svg width='18' height='18' viewBox='0 0 512 512' {...props}>
+      <path
+        fill='currentColor'
+        d='M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208s208-93.13 208-208S370.87 48 256 48Zm-9.17 241.14V344L146 248l100.83-96v54.86c96.5 0 119.17 69 119.17 137.14c-27.85-35.57-52.48-54.86-119.17-54.86Z'
+      ></path>
+    </svg>
+  );
+}
+export { UserIcon, DeleteIcon, ArchiveIcon, EditIcon, UndoIcon };

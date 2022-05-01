@@ -19,19 +19,22 @@ const SavedNote = ({ note }) => {
         </div>
         <div className='button-display'>
           <button
-            className='note-btn'
+            className='note-btn tooltip'
             onClick={() => {
               moveToTrash(note);
               deleteNoteApiCall(_id, note);
             }}
           >
             <DeleteIcon />
+            <span className='tooltiptext'>Delete note</span>
           </button>
-          <button className='note-btn'>
+          <button className='note-btn tooltip'>
             <ArchiveIcon />
+            <span className='tooltiptext'>Archive note</span>
           </button>
-          <button className='note-btn'>
+          <button className='note-btn tooltip'>
             <EditIcon />
+            <span className='tooltiptext'>Edit note</span>
           </button>
         </div>
       </div>

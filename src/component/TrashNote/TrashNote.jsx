@@ -21,19 +21,25 @@ const TrashNote = ({ deletedNotes }) => {
       </div>
       <div className='button-display'>
         <button
-          className='note-btn'
+          className='note-btn tooltip'
           onClick={() => {
             addNotes(deletedNotes);
             deleteNotefromTrash(_id);
           }}
         >
           <UndoIcon />
+          <span className='tooltiptext'>Undo</span>
         </button>
-        <button className='note-btn' onClick={() => deleteNotefromTrash(_id)}>
+        <button
+          className='note-btn tooltip'
+          onClick={() => deleteNotefromTrash(_id)}
+        >
           <DeleteIcon />
+          <span className='tooltiptext'>Delete note</span>
         </button>
-        <button className='note-btn'>
+        <button className='note-btn tooltip'>
           <ArchiveIcon />
+          <span className='tooltiptext'>Archive note</span>
         </button>
       </div>
     </div>

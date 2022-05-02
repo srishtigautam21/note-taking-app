@@ -10,6 +10,12 @@ const TrashNote = ({ deletedNotes }) => {
   const deleteNotefromTrash = (noteId) => {
     setDeletedNotes((prev) => prev.filter((note) => note._id !== noteId));
   };
+
+  const current = new Date();
+  const date = `${current.getDate()}/${
+    current.getMonth() + 1
+  }/${current.getFullYear()}`;
+
   return (
     <div className='add-saved-note'>
       <div className='note-title'>
@@ -18,7 +24,7 @@ const TrashNote = ({ deletedNotes }) => {
       </div>
       <div className='note-text'>{mainContent}</div>
       <div className='date-priority'>
-        <div>17/04/22</div>
+        <div>{date}</div>
         <div className='priority-chips'>{priority}</div>
       </div>
       <div className='button-display'>

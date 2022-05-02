@@ -28,3 +28,19 @@
   border-top-right-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
 }
+.note-filter-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+.filter {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.filter-pd {
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+.filter-margin {
+  margin-right: 5px;
+}

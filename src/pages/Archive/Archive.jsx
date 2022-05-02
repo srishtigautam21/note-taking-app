@@ -1,13 +1,22 @@
-import { Navbar, Sidebar } from "../../component";
-
+import { Navbar, Sidebar, ArchiveNote } from "../../component";
+import { useArchive } from "../../context";
+import "./archive.css";
 const Archive = () => {
+  const { archiveNote } = useArchive();
   return (
     <>
       <div className='home-page grid-container'>
         <Navbar />
         <Sidebar />
-        <div className='main-content'>Archive</div>
-        <div className='main-footer'>Footer</div>
+
+        <div className='main-content'>
+          <h1 className='trash-heading'>Archive</h1>
+          <div className='archive-container'>
+            {archiveNote.map((archive) => (
+              <ArchiveNote key={archive._id} archive={archive} />
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );

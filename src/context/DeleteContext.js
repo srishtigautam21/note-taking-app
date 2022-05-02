@@ -21,7 +21,6 @@ const DeleteProvider = ({ children }) => {
     try {
       const response = await axios.delete(`/api/notes/${notesId}`, config);
       setNotes(response.data.notes);
-      console.log(response.data.notes);
     } catch (e) {
       console.log(e);
     }

@@ -1,11 +1,9 @@
 import "./savedNote.css";
 import { DeleteIcon, ArchiveIcon, EditIcon } from "../../Asset/Svg/allsvg";
-// import { useNote } from "../../context/NoteContext";
 import { useDeleteNote, useArchive } from "../../context";
 
 const SavedNote = ({ note }) => {
   const { title, priority, tags, mainContent, _id } = note;
-  // const { deleteNoteApiCall, moveToTrash } = useNote();
   const { deleteNoteApiCall, moveToTrash } = useDeleteNote();
   const { moveToArchive } = useArchive();
   return (

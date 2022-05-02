@@ -9,15 +9,16 @@
 }
 .button-display {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 50%;
 }
 .note-btn {
   padding: 3px;
-  margin: 7px;
+  margin: 7px 1rem 7px 7px;
   cursor: pointer;
   border: 0;
   background-color: transparent;
+  color: var(--COLOR-SOCIAL-ICON);
 }
 .note-title {
   font-weight: 500;

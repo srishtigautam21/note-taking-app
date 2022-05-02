@@ -18,8 +18,6 @@ const ArchiveProvider = ({ children }) => {
       );
       setNotes(response.data.notes);
       setArchiveNote(response.data.archives);
-      //   console.log("delete from main note", response.data.notes);
-      //   console.log("archive page", response.data.archives);
     } catch (e) {
       console.log(e);
     }
@@ -36,8 +34,6 @@ const ArchiveProvider = ({ children }) => {
       );
       setArchiveNote(response.data.archives);
       setNotes(response.data.notes);
-      console.log("delete from main note", response.data.notes);
-      console.log("archive page", response.data.archives);
     } catch (e) {
       console.log(e);
     }

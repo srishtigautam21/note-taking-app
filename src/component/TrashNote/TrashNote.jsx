@@ -1,10 +1,12 @@
-import { DeleteIcon, ArchiveIcon, UndoIcon } from "../../Asset/Svg/allsvg";
+import { DeleteIcon, UndoIcon } from "../../Asset/Svg/allsvg";
 import "./trashNote.css";
-import { useNote } from "../../context/NoteContext";
+import { useNote, useDeleteNote } from "../../context";
 
 const TrashNote = ({ deletedNotes }) => {
   const { title, priority, tags, mainContent, _id } = deletedNotes;
-  const { addNotes, setDeletedNotes } = useNote();
+  const { addNotes } = useNote();
+  const { setDeletedNotes } = useDeleteNote();
+
   const deleteNotefromTrash = (noteId) => {
     setDeletedNotes((prev) => prev.filter((note) => note._id !== noteId));
   };
@@ -21,19 +23,21 @@ const TrashNote = ({ deletedNotes }) => {
       </div>
       <div className='button-display'>
         <button
-          className='note-btn'
+          className='note-btn tooltip'
           onClick={() => {
             addNotes(deletedNotes);
             deleteNotefromTrash(_id);
           }}
         >
           <UndoIcon />
+          <span className='tooltiptext'>Undo</span>
         </button>
-        <button className='note-btn' onClick={() => deleteNotefromTrash(_id)}>
+        <button
+          className='note-btn tooltip'
+          onClick={() => deleteNotefromTrash(_id)}
+        >
           <DeleteIcon />
-        </button>
-        <button className='note-btn'>
-          <ArchiveIcon />
+          <span className='tooltiptext'>Delete note</span>
         </button>
       </div>
     </div>

@@ -1,11 +1,10 @@
-import "./savedNote.css";
-import { DeleteIcon, ArchiveIcon, EditIcon } from "../../Asset/Svg/allsvg";
 import { useDeleteNote, useArchive } from "../../context";
+import { DeleteIcon, UndoIcon, EditIcon } from "../../Asset/Svg/allsvg";
 
-const SavedNote = ({ note }) => {
-  const { title, priority, tags, mainContent, _id } = note;
-  const { deleteNoteApiCall, moveToTrash } = useDeleteNote();
-  const { moveToArchive } = useArchive();
+const ArchiveNote = ({ archive }) => {
+  const { moveToTrash } = useDeleteNote();
+  const { restoreArchiveNote, deleteArchive } = useArchive();
+  const { title, priority, tags, mainContent, _id } = archive;
   return (
     <div>
       <div className='add-saved-note'>
@@ -21,20 +20,20 @@ const SavedNote = ({ note }) => {
         <div className='button-display'>
           <button
             className='note-btn tooltip'
+            onClick={() => restoreArchiveNote(_id)}
+          >
+            <UndoIcon />
+            <span className='tooltiptext'>Restore</span>
+          </button>
+          <button
+            className='note-btn tooltip'
             onClick={() => {
-              moveToTrash(note);
-              deleteNoteApiCall(_id, note);
+              moveToTrash(archive);
+              deleteArchive(_id);
             }}
           >
             <DeleteIcon />
             <span className='tooltiptext'>Delete note</span>
-          </button>
-          <button
-            className='note-btn tooltip'
-            onClick={() => moveToArchive(_id, note)}
-          >
-            <ArchiveIcon />
-            <span className='tooltiptext'>Archive note</span>
           </button>
           <button className='note-btn tooltip'>
             <EditIcon />
@@ -45,4 +44,4 @@ const SavedNote = ({ note }) => {
     </div>
   );
 };
-export { SavedNote };
+export { ArchiveNote };

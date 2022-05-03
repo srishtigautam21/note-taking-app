@@ -11,6 +11,7 @@ import {
   NoteProvider,
   DeleteProvider,
   ArchiveProvider,
+  FilterProvider,
 } from "./context/index";
 
 // Call make Server
@@ -20,13 +21,15 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <AuthProvider>
-        <NoteProvider>
-          <DeleteProvider>
-            <ArchiveProvider>
-              <App />
-            </ArchiveProvider>
-          </DeleteProvider>
-        </NoteProvider>
+        <FilterProvider>
+          <NoteProvider>
+            <DeleteProvider>
+              <ArchiveProvider>
+                <App />
+              </ArchiveProvider>
+            </DeleteProvider>
+          </NoteProvider>
+        </FilterProvider>
       </AuthProvider>
     </Router>
   </React.StrictMode>,

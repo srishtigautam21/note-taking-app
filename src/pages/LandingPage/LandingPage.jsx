@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
-    <div className='main-container md-pd'>
+    <div className='main-container md-pd-landingPage'>
       <div className='landingPage-content-container'>
         <h1 className='lg-header md-top-margin'>
           <span className='color-primary'>My</span> Notes

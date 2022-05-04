@@ -1,9 +1,11 @@
 import { AddNote, Navbar, Sidebar, SavedNote } from "../../component";
 import "./homePage.css";
-import { useNote } from "../../context/NoteContext";
+
+import { useFilterHook } from "../../hooks/useFilterHook";
 
 const HomePage = () => {
-  const { notes } = useNote();
+  const filterByDate = useFilterHook();
+
   return (
     <>
       <div className='home-page grid-container'>
@@ -13,7 +15,7 @@ const HomePage = () => {
           <AddNote />
           <div className='inner-container'>
             <div className='note-list'>
-              {notes.map((note) => {
+              {filterByDate.map((note) => {
                 return <SavedNote key={note._id} note={note} />;
               })}
             </div>

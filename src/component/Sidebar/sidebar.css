@@ -44,3 +44,12 @@
 .filter-margin {
   margin-right: 5px;
 }
+.clearAll-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.clearAll {
+  cursor: pointer;
+  text-decoration: underline;
+  padding-right: 2rem;
+}

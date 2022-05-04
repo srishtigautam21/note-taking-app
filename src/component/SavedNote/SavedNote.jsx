@@ -3,13 +3,10 @@ import { DeleteIcon, ArchiveIcon, EditIcon } from "../../Asset/Svg/allsvg";
 import { useDeleteNote, useArchive } from "../../context";
 
 const SavedNote = ({ note }) => {
-  const { title, priority, tags, mainContent, _id } = note;
+  const { title, priority, tags, mainContent, _id, date } = note;
   const { deleteNoteApiCall, moveToTrash } = useDeleteNote();
   const { moveToArchive } = useArchive();
-  const current = new Date();
-  const date = `${current.getDate()}/${
-    current.getMonth() + 1
-  }/${current.getFullYear()}`;
+
   return (
     <div>
       <div className='add-saved-note'>

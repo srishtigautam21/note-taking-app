@@ -4,7 +4,7 @@
   /* width: 100vw; */
 }
 .grid-container {
-  grid-template-columns: 0.5fr 2fr;
+  grid-template-columns: 0.6fr 2fr;
   grid-template-rows: 0.3fr 3fr; /*1fr*/
   grid-template-areas:
     "navbar navbar"

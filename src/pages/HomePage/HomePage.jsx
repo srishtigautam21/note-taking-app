@@ -15,9 +15,9 @@ const HomePage = () => {
           <AddNote />
           <div className='inner-container'>
             <div className='note-list'>
-              {filterByDate.map((note) => {
-                return <SavedNote key={note._id} note={note} />;
-              })}
+              {filterByDate.map((note) => (
+                <SavedNote key={note._id} note={note} />
+              ))}
             </div>
           </div>
         </div>

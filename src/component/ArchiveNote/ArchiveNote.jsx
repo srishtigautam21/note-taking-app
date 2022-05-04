@@ -4,12 +4,7 @@ import { DeleteIcon, UndoIcon, EditIcon } from "../../Asset/Svg/allsvg";
 const ArchiveNote = ({ archive }) => {
   const { moveToTrash } = useDeleteNote();
   const { restoreArchiveNote, deleteArchive } = useArchive();
-  const { title, priority, tags, mainContent, _id } = archive;
-
-  const current = new Date();
-  const date = `${current.getDate()}/${
-    current.getMonth() + 1
-  }/${current.getFullYear()}`;
+  const { title, priority, tags, mainContent, _id, date } = archive;
 
   return (
     <div>

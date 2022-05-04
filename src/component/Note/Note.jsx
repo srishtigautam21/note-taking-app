@@ -1,5 +1,5 @@
 import "./note.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNote } from "../../context/NoteContext";
 
 const AddNote = () => {
@@ -10,8 +10,15 @@ const AddNote = () => {
     tags: "",
     priority: "",
     mainContent: "",
+    date: "",
   };
   const [noteContent, setNoteContent] = useState(initialState);
+  const current = new Date();
+  const date = current.toLocaleString();
+  useEffect(() => {
+    setNoteContent((prev) => ({ ...prev, date: date }));
+  }, [date]);
+
   return (
     <div className='top-margin center-align'>
       {isNoteVisible ? (

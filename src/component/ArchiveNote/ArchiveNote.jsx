@@ -4,7 +4,8 @@ import { DeleteIcon, UndoIcon, EditIcon } from "../../Asset/Svg/allsvg";
 const ArchiveNote = ({ archive }) => {
   const { moveToTrash } = useDeleteNote();
   const { restoreArchiveNote, deleteArchive } = useArchive();
-  const { title, priority, tags, mainContent, _id } = archive;
+  const { title, priority, tags, mainContent, _id, date } = archive;
+
   return (
     <div>
       <div className='add-saved-note'>
@@ -14,7 +15,7 @@ const ArchiveNote = ({ archive }) => {
         </div>
         <div className='note-text'>{mainContent}</div>
         <div className='date-priority'>
-          <div>17/04/22</div>
+          <div>{date}</div>
           <div className='priority-chips'>{priority}</div>
         </div>
         <div className='button-display'>

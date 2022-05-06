@@ -6,7 +6,21 @@ const NoteContext = createContext({});
 
 const NoteProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
+  const initialState = {
+    title: "",
+    tags: "",
+    priority: "",
+    mainContent: "",
+    date: "",
+    noteColor: "#f9fafb",
+  };
 
+  const [noteContent, setNoteContent] = useState(initialState);
+  const [editNote, setEditNote] = useState(initialState);
+  const contentOnEditNote = (_id) => {
+    const Obj = notes.find((note) => note._id === _id);
+    setEditNote(Obj);
+  };
   useEffect(() => {
     (async () => {
       const encodedToken = localStorage.getItem("token");
@@ -30,6 +44,27 @@ const NoteProvider = ({ children }) => {
       console.log(e);
     }
   };
+  const updateNote = async (editNote) => {
+    console.log("edit note", editNote);
+    const encodedToken = localStorage.getItem("token");
+    const config = {
+      headers: {
+        authorization: encodedToken,
+      },
+    };
+    try {
+      const response = await axios.post(
+        `/api/notes/${editNote._id}`,
+        { note: editNote },
+        config
+      );
+      setNotes(response.data.notes);
+      console.log(response.data.notes);
+      setEditNote(initialState);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <NoteContext.Provider
@@ -37,6 +72,13 @@ const NoteProvider = ({ children }) => {
         addNotes,
         notes,
         setNotes,
+        noteContent,
+        setNoteContent,
+        initialState,
+        contentOnEditNote,
+        editNote,
+        setEditNote,
+        updateNote,
       }}
     >
       {children}

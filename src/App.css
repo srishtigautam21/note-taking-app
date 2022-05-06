@@ -49,3 +49,11 @@
   font-size: 1.2rem;
   margin: 1rem;
 } */
+:root {
+  --COLOR-PINK: rgb(255, 191, 202);
+  --COLOR-BLUE: rgb(139, 229, 245);
+  --COLOR-YELLOW: rgb(249, 249, 192);
+  --COLOR-RED: rgb(225, 141, 141);
+  --COLOR-PURPLE: rgb(133, 81, 133);
+  --COLOR-GREEN: rgb(139, 183, 139);
+}

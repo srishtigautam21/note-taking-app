@@ -1,36 +1,33 @@
-import "./note.css";
-import { useState, useEffect } from "react";
-import { useNote } from "../../context/NoteContext";
+import "./editNote.css";
+import ReactDom from "react-dom";
+import { useNote } from "../../context";
 import { ColorPallete } from "../../Asset/Svg/allsvg";
-import { colorsData } from "./ColorData.jsx";
+import { useState } from "react";
+import { colorsData } from "../Note/ColorData";
 
-const AddNote = () => {
-  const { addNotes, noteContent, setNoteContent, initialState } = useNote();
-  const [isNoteVisible, setIsNoteVisisble] = useState(false);
+const EditNote = ({ setOpenModal, _id }) => {
+  // { note, openModal, children }
+  const { editNote, setEditNote, updateNote } = useNote();
   const [colorOpen, setColorOpen] = useState(false);
-  // const initialState = {
-  //   title: "",
-  //   tags: "",
-  //   priority: "",
-  //   mainContent: "",
-  //   date: "",
-  // };
-  // const [noteContent, setNoteContent] = useState(initialState);
+  // const { title, priority, tags, mainContent, date } = note;
   const colorHandler = (color) => {
-    setNoteContent({ ...noteContent, noteColor: color });
+    setEditNote({ ...editNote, noteColor: color });
   };
-  const current = new Date();
-  const date = current.toLocaleString();
-  useEffect(() => {
-    setNoteContent((prev) => ({ ...prev, date: date }));
-  }, [date]);
-
-  return (
-    <div className='top-margin center-align'>
-      {isNoteVisible ? (
+  const saveEditNote = (editNote) => {
+    setOpenModal(false);
+    updateNote(editNote);
+  };
+  return ReactDom.createPortal(
+    <div className='modal-background'>
+      <div className='modal-container'>
+        <div className='btn-cross-modal'>
+          <button className='btn-cross' onClick={() => setOpenModal(false)}>
+            X
+          </button>
+        </div>
         <div
-          style={{ backgroundColor: noteContent.noteColor }}
-          className='add-note border'
+          style={{ backgroundColor: editNote.noteColor }}
+          className='add-edit-note border'
         >
           <div className='input-container input-margin'>
             <label htmlFor='input-title'>
@@ -40,9 +37,9 @@ const AddNote = () => {
                 className='border-note sm-pd title-input '
                 placeholder='Title'
                 type='text'
-                value={noteContent.title}
+                value={editNote.title}
                 onChange={(e) =>
-                  setNoteContent((prev) => ({ ...prev, title: e.target.value }))
+                  setEditNote((prev) => ({ ...prev, title: e.target.value }))
                 }
               />
             </label>
@@ -53,9 +50,9 @@ const AddNote = () => {
                 name='tags'
                 className='border-note sm-pd tags'
                 placeholder='Add Tags'
-                value={noteContent.tags}
+                value={editNote.tags}
                 onChange={(e) =>
-                  setNoteContent((prev) => ({ ...prev, tags: e.target.value }))
+                  setEditNote((prev) => ({ ...prev, tags: e.target.value }))
                 }
               >
                 <option value='none'>None</option>
@@ -72,9 +69,9 @@ const AddNote = () => {
                 name='priority'
                 className='border-note sm-pd priority'
                 placeholder='Add Priority'
-                value={noteContent.priority}
+                value={editNote.priority}
                 onChange={(e) =>
-                  setNoteContent((prev) => ({
+                  setEditNote((prev) => ({
                     ...prev,
                     priority: e.target.value,
                   }))
@@ -91,9 +88,9 @@ const AddNote = () => {
             className='no-border pd-md input-margin'
             placeholder='Add Note...'
             type='text'
-            value={noteContent.mainContent}
+            value={editNote.mainContent}
             onChange={(e) =>
-              setNoteContent((prev) => ({
+              setEditNote((prev) => ({
                 ...prev,
                 mainContent: e.target.value,
               }))
@@ -129,27 +126,54 @@ const AddNote = () => {
               </div>
             )}
           </div>
-
           <button
             className='no-border save-btn'
-            onClick={() => {
-              addNotes(noteContent);
-              setIsNoteVisisble((note) => !note);
-              setNoteContent(initialState);
-            }}
+            onClick={() => saveEditNote(editNote)}
+            // onClick={() => {
+            //   addNotes(noteContent);
+            //   setIsNoteVisisble((note) => !note);
+            //   setNoteContent(initialState);
+            // }}
           >
             Save
           </button>
         </div>
-      ) : (
+        {/* ) : (
         <button
           onClick={() => setIsNoteVisisble((note) => !note)}
           className='note-button-style'
         >
           Create New Note
         </button>
-      )}
-    </div>
+      )} */}
+        {/* </div> */}
+        {/* <div className='add-saved-note'>
+          <div className='note-title'>
+            {title}
+            <div className='tag-chips'># {tags}</div>
+          </div>
+          <div className='note-text'>{mainContent}</div>
+          <div className='date-priority'>
+            <div className='pd-top'>{date}</div>
+            <div className='priority-chips'>{priority}</div>
+          </div>
+          <div className='button-display'>
+            <button
+              className='no-border save-btn'
+              onClick={() => setOpenModal(false)}
+              onClick={() => {
+                addNotes(noteContent);
+                setIsNoteVisisble((note) => !note);
+                setNoteContent(initialState);
+              }}
+            >
+              Save
+            </button>
+          </div>
+        </div> */}
+      </div>
+    </div>,
+    document.getElementById("portal")
   );
 };
-export { AddNote };
+export { EditNote };

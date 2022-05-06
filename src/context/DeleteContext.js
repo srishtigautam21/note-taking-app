@@ -22,7 +22,7 @@ const DeleteProvider = ({ children }) => {
       const response = await axios.delete(`/api/notes/${notesId}`, config);
       setNotes(response.data.notes);
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
   };
   return (

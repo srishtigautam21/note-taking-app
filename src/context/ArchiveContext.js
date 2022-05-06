@@ -19,7 +19,7 @@ const ArchiveProvider = ({ children }) => {
       setNotes(response.data.notes);
       setArchiveNote(response.data.archives);
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
   };
 
@@ -35,7 +35,7 @@ const ArchiveProvider = ({ children }) => {
       setArchiveNote(response.data.archives);
       setNotes(response.data.notes);
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
   };
 
@@ -49,7 +49,7 @@ const ArchiveProvider = ({ children }) => {
       );
       setArchiveNote(response.data.archives);
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
   };
   return (

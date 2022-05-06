@@ -41,7 +41,7 @@ const NoteProvider = ({ children }) => {
       const response = await axios.post("/api/notes", { note }, config);
       setNotes(response.data.notes);
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
   };
   const updateNote = async (editNote) => {
@@ -59,10 +59,10 @@ const NoteProvider = ({ children }) => {
         config
       );
       setNotes(response.data.notes);
-      console.log(response.data.notes);
+
       setEditNote(initialState);
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
   };
 

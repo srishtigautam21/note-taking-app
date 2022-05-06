@@ -6,10 +6,9 @@ import { useState } from "react";
 import { colorsData } from "../Note/ColorData";
 
 const EditNote = ({ setOpenModal, _id }) => {
-  // { note, openModal, children }
   const { editNote, setEditNote, updateNote } = useNote();
   const [colorOpen, setColorOpen] = useState(false);
-  // const { title, priority, tags, mainContent, date } = note;
+
   const colorHandler = (color) => {
     setEditNote({ ...editNote, noteColor: color });
   };
@@ -114,63 +113,17 @@ const EditNote = ({ setOpenModal, _id }) => {
                       onClick={() => colorHandler(color.color)}
                     ></div>
                   ))}
-                  {/* <div className='color pink'></div>
-                  <div className='color blue'></div>
-                  <div className='color purple'></div> */}
                 </div>
-                {/* <div className='color-container-row'>
-                  <div className='color red'></div>
-                  <div className='color yellow'></div>
-                  <div className='color green'></div>
-                </div> */}
               </div>
             )}
           </div>
           <button
             className='no-border save-btn'
             onClick={() => saveEditNote(editNote)}
-            // onClick={() => {
-            //   addNotes(noteContent);
-            //   setIsNoteVisisble((note) => !note);
-            //   setNoteContent(initialState);
-            // }}
           >
-            Save
+            Update
           </button>
         </div>
-        {/* ) : (
-        <button
-          onClick={() => setIsNoteVisisble((note) => !note)}
-          className='note-button-style'
-        >
-          Create New Note
-        </button>
-      )} */}
-        {/* </div> */}
-        {/* <div className='add-saved-note'>
-          <div className='note-title'>
-            {title}
-            <div className='tag-chips'># {tags}</div>
-          </div>
-          <div className='note-text'>{mainContent}</div>
-          <div className='date-priority'>
-            <div className='pd-top'>{date}</div>
-            <div className='priority-chips'>{priority}</div>
-          </div>
-          <div className='button-display'>
-            <button
-              className='no-border save-btn'
-              onClick={() => setOpenModal(false)}
-              onClick={() => {
-                addNotes(noteContent);
-                setIsNoteVisisble((note) => !note);
-                setNoteContent(initialState);
-              }}
-            >
-              Save
-            </button>
-          </div>
-        </div> */}
       </div>
     </div>,
     document.getElementById("portal")

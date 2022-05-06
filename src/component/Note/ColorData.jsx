@@ -7,4 +7,3 @@ export const colorsData = [
   { color: "#cf8fcf" },
   { color: "#8ce68c" },
 ];
-// "#f9fafb"

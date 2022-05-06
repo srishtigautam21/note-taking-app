@@ -13,12 +13,12 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgb(211, 211, 211, 0.7);
+  background-color: var(--BACKGROUND-MODAL);
 }
 .btn-cross-modal {
   position: absolute;
   top: 5px;
-  right: 5px;
+  right: 1rem;
 }
 .btn-cross {
   background-color: transparent;

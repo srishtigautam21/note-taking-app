@@ -8,14 +8,7 @@ const AddNote = () => {
   const { addNotes, noteContent, setNoteContent, initialState } = useNote();
   const [isNoteVisible, setIsNoteVisisble] = useState(false);
   const [colorOpen, setColorOpen] = useState(false);
-  // const initialState = {
-  //   title: "",
-  //   tags: "",
-  //   priority: "",
-  //   mainContent: "",
-  //   date: "",
-  // };
-  // const [noteContent, setNoteContent] = useState(initialState);
+
   const colorHandler = (color) => {
     setNoteContent({ ...noteContent, noteColor: color });
   };
@@ -117,15 +110,7 @@ const AddNote = () => {
                       onClick={() => colorHandler(color.color)}
                     ></div>
                   ))}
-                  {/* <div className='color pink'></div>
-                  <div className='color blue'></div>
-                  <div className='color purple'></div> */}
                 </div>
-                {/* <div className='color-container-row'>
-                  <div className='color red'></div>
-                  <div className='color yellow'></div>
-                  <div className='color green'></div>
-                </div> */}
               </div>
             )}
           </div>

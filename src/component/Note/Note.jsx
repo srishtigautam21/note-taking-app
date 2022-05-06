@@ -16,6 +16,7 @@ const AddNote = () => {
   const date = current.toLocaleString();
   useEffect(() => {
     setNoteContent((prev) => ({ ...prev, date: date }));
+    // eslint-disable-next-line
   }, [date]);
 
   return (

@@ -3,7 +3,8 @@ import "./trashNote.css";
 import { useNote, useDeleteNote } from "../../context";
 
 const TrashNote = ({ deletedNotes }) => {
-  const { title, priority, tags, mainContent, _id, date } = deletedNotes;
+  const { title, priority, tags, mainContent, _id, date, noteColor } =
+    deletedNotes;
   const { addNotes } = useNote();
   const { setDeletedNotes } = useDeleteNote();
 
@@ -12,7 +13,7 @@ const TrashNote = ({ deletedNotes }) => {
   };
 
   return (
-    <div className='add-saved-note'>
+    <div style={{ backgroundColor: noteColor }} className='add-saved-note'>
       <div className='note-title'>
         {title}
         <div className='tag-chips'># {tags}</div>

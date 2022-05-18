@@ -1,13 +1,15 @@
 import heroSvg from "../../Asset/Svg/hero.svg";
 import "./landingPage.css";
 import { Link } from "react-router-dom";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 
 const LandingPage = () => {
+  useDocumentTitle("LandingPage");
   return (
     <div className='main-container md-pd-landingPage'>
       <div className='landingPage-content-container'>
         <h1 className='lg-header md-top-margin'>
-          <span className='color-primary'>My</span> Notes
+          <span className='color-primary'>Notet</span>
         </h1>
         <div className='lg-note-margin'>
           <h2 className='md-sub-head'>

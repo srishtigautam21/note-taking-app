@@ -1,7 +1,9 @@
 import { Navbar, Sidebar, ArchiveNote } from "../../component";
 import { useArchive } from "../../context";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 import "./archive.css";
 const Archive = () => {
+  useDocumentTitle("ArchivePage");
   const { archiveNote } = useArchive();
   return (
     <>

@@ -2,14 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Mockman from "mockman-js";
 import { RequireAuth } from "./utils/RequireAuth";
-import {
-  LandingPage,
-  HomePage,
-  Archive,
-  Labels,
-  Trash,
-  LoginPage,
-} from "./pages";
+import { LandingPage, HomePage, Archive, Trash, LoginPage } from "./pages";
 
 function App() {
   return (
@@ -32,14 +25,7 @@ function App() {
             </RequireAuth>
           }
         />
-        <Route
-          path='/labels'
-          element={
-            <RequireAuth>
-              <Labels />
-            </RequireAuth>
-          }
-        />
+
         <Route
           path='/trash'
           element={

@@ -17,9 +17,6 @@ const Sidebar = () => {
         <NavLink to='/homePage' className={activeStyle}>
           Home
         </NavLink>
-        <NavLink to='/labels' className={activeStyle}>
-          Labels
-        </NavLink>
         <NavLink to='/archive' className={activeStyle}>
           Archive
         </NavLink>

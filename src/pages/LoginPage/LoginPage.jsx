@@ -1,7 +1,9 @@
 import "./loginPage.css";
 import { Navbar } from "../../component";
 import { useAuth } from "../../context/AuthContext";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 const LoginPage = () => {
+  useDocumentTitle("LoginPage");
   const { loginInfo, setLoginInfo, loginHandler } = useAuth();
   const { email, password } = loginInfo;
   return (

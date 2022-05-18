@@ -10,7 +10,7 @@ const Navbar = () => {
       <nav className='nav-component nav-padding'>
         <div className='content-header'>
           <Link className='component-libraryl-link' to='/'>
-            My Notes
+            Notet
           </Link>
         </div>
         <li className='icons-alignment'>

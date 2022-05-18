@@ -25,9 +25,15 @@ const AuthProvider = ({ children }) => {
       console.error(e);
     }
   };
+
+  const logOut = () => {
+    localStorage.clear();
+    setUserLoggedIn(false);
+  };
+
   return (
     <AuthContext.Provider
-      value={{ loginHandler, loginInfo, setloginInfo, isUserLoggedIn }}
+      value={{ loginHandler, loginInfo, setloginInfo, isUserLoggedIn, logOut }}
     >
       {children}
     </AuthContext.Provider>

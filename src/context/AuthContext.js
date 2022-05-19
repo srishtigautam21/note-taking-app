@@ -12,8 +12,10 @@ const AuthProvider = ({ children }) => {
     password: "adarshBalika123",
   };
   let from = location.state?.from?.pathname || "/homePage";
+
   const [loginInfo, setloginInfo] = useState(initialData);
   const [isUserLoggedIn, setUserLoggedIn] = useState(false);
+
   const loginHandler = async (e, email, password) => {
     e.preventDefault();
     try {
@@ -25,9 +27,15 @@ const AuthProvider = ({ children }) => {
       console.error(e);
     }
   };
+
+  const logOut = () => {
+    localStorage.clear();
+    setUserLoggedIn(false);
+  };
+
   return (
     <AuthContext.Provider
-      value={{ loginHandler, loginInfo, setloginInfo, isUserLoggedIn }}
+      value={{ loginHandler, loginInfo, setloginInfo, isUserLoggedIn, logOut }}
     >
       {children}
     </AuthContext.Provider>

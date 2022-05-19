@@ -6,9 +6,9 @@ import {
   LandingPage,
   HomePage,
   Archive,
-  Labels,
   Trash,
   LoginPage,
+  Page404,
 } from "./pages";
 
 function App() {
@@ -32,14 +32,7 @@ function App() {
             </RequireAuth>
           }
         />
-        <Route
-          path='/labels'
-          element={
-            <RequireAuth>
-              <Labels />
-            </RequireAuth>
-          }
-        />
+
         <Route
           path='/trash'
           element={
@@ -49,6 +42,7 @@ function App() {
           }
         />
         <Route path='/login' element={<LoginPage />} />
+        <Route path='*' element={<Page404 />} />
         <Route path='/mockman' element={<Mockman />} />
       </Routes>
     </>

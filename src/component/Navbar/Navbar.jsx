@@ -2,15 +2,17 @@ import "./navbar.css";
 import { useState } from "react";
 import { UserIcon } from "../../Asset/Svg/allsvg";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 const Navbar = () => {
+  const { isUserLoggedIn, logOut } = useAuth();
   const [open, setOpen] = useState(false);
   return (
     <div className='navbar'>
       <nav className='nav-component nav-padding'>
         <div className='content-header'>
           <Link className='component-libraryl-link' to='/'>
-            My Notes
+            Notet
           </Link>
         </div>
         <li className='icons-alignment'>
@@ -24,12 +26,22 @@ const Navbar = () => {
             </Link>
             {open && (
               <div className='dropdown-menu'>
-                <Link className='dropdown-content login-link' to='/login'>
-                  Login
-                </Link>
-                <Link className='dropdown-content profile' to='/homePage'>
-                  Profile
-                </Link>
+                {isUserLoggedIn ? (
+                  <Link
+                    className='link content-color'
+                    to='/'
+                    onClick={() => {
+                      logOut();
+                      setOpen((open) => !open);
+                    }}
+                  >
+                    Logout
+                  </Link>
+                ) : (
+                  <Link className='dropdown-content login-link' to='/login'>
+                    Login
+                  </Link>
+                )}
               </div>
             )}
           </div>

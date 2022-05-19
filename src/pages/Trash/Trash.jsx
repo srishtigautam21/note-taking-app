@@ -1,10 +1,10 @@
 import { Navbar, Sidebar, TrashNote } from "../../component";
-// import { useNote } from "../../context/NoteContext";
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 import { useDeleteNote } from "../../context";
 import "./trash.css";
 
 const Trash = () => {
-  // const { deletedNotes } = useNote();
+  useDocumentTitle("TrashPage");
   const { deletedNotes } = useDeleteNote();
 
   return (

@@ -1,11 +1,11 @@
 import { AddNote, Navbar, Sidebar, SavedNote } from "../../component";
 import "./homePage.css";
-
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 import { useFilterHook } from "../../hooks/useFilterHook";
 
 const HomePage = () => {
   const filterByDate = useFilterHook();
-
+  useDocumentTitle("HomePage");
   return (
     <>
       <div className='home-page grid-container'>

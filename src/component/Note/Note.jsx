@@ -115,17 +115,24 @@ const AddNote = () => {
               </div>
             )}
           </div>
-
-          <button
-            className='no-border save-btn'
-            onClick={() => {
-              addNotes(noteContent);
-              setIsNoteVisisble((note) => !note);
-              setNoteContent(initialState);
-            }}
-          >
-            Save
-          </button>
+          {noteContent.title === "" ||
+          noteContent.tags === "" ||
+          noteContent.priority === "" ? (
+            <button className='no-border disable-btn' disabled>
+              Save
+            </button>
+          ) : (
+            <button
+              className='no-border save-btn'
+              onClick={() => {
+                addNotes(noteContent);
+                setIsNoteVisisble((note) => !note);
+                setNoteContent(initialState);
+              }}
+            >
+              Save
+            </button>
+          )}
         </div>
       ) : (
         <button

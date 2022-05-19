@@ -12,8 +12,10 @@ const AuthProvider = ({ children }) => {
     password: "adarshBalika123",
   };
   let from = location.state?.from?.pathname || "/homePage";
+
   const [loginInfo, setloginInfo] = useState(initialData);
   const [isUserLoggedIn, setUserLoggedIn] = useState(false);
+
   const loginHandler = async (e, email, password) => {
     e.preventDefault();
     try {

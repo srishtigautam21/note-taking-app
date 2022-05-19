@@ -6,6 +6,7 @@ const NoteContext = createContext({});
 
 const NoteProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
+
   const initialState = {
     title: "",
     tags: "",
@@ -45,7 +46,6 @@ const NoteProvider = ({ children }) => {
     }
   };
   const updateNote = async (editNote) => {
-    console.log("edit note", editNote);
     const encodedToken = localStorage.getItem("token");
     const config = {
       headers: {

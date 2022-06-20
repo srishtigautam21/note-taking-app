@@ -25,7 +25,7 @@ const LandingPage = () => {
           <button className='button btn-width sm-pd'>Start Taking Notes</button>
         </Link>
       </div>
-      <img src={heroSvg} alt='svg' />
+      <img src={heroSvg} alt='svg' className='hero-image-container' />
     </div>
   );
 };

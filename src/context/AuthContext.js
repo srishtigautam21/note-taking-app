@@ -8,18 +8,21 @@ const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const initialData = {
-    email: "adarshbalika@gmail.com",
-    password: "adarshBalika123",
+    email: "",
+    password: "",
   };
   let from = location.state?.from?.pathname || "/homePage";
 
   const [loginInfo, setloginInfo] = useState(initialData);
   const [isUserLoggedIn, setUserLoggedIn] = useState(false);
 
-  const loginHandler = async (e, email, password) => {
+  const loginHandler = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/auth/login", { email, password });
+      const response = await axios.post("/api/auth/login", {
+        email: loginInfo.email,
+        password: loginInfo.password,
+      });
       localStorage.setItem("token", response.data.encodedToken);
       setUserLoggedIn(true);
       navigate(from, { replace: true });

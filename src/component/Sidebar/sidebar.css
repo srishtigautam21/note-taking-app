@@ -52,3 +52,8 @@
   text-decoration: underline;
   padding-right: 2rem;
 }
+@media only screen and (max-width: 600px) {
+  .sidebar-mediaquery {
+    display: none;
+  }
+}

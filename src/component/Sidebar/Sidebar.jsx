@@ -13,7 +13,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className='sidebar md-margin'>
+      <div className='sidebar md-margin sidebar-mediaquery'>
         <NavLink to='/homePage' className={activeStyle}>
           Home
         </NavLink>

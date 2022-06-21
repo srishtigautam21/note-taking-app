@@ -25,6 +25,12 @@
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 0.7fr));
 }
+.filter-icon {
+  display: none;
+}
+.modal-mediaquery {
+  display: none;
+}
 @media only screen and (max-width: 600px) {
   .grid-container {
     grid-template-columns: 1fr;
@@ -33,5 +39,19 @@
       "navbar"
       " main-content"
       "footer";
+  }
+  .filter-icon-mediaquery {
+    display: block;
+    position: absolute;
+    top: 11rem;
+    right: 3rem;
+  }
+  .filter-icon-mediaquery:hover {
+    cursor: pointer;
+    color: var(--COLOR-PRIMARY);
+    /* width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px var(--BOX-SHADOW-LIGHTER); */
   }
 }

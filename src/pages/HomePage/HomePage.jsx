@@ -29,6 +29,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+        <div className='footer'></div>
       </div>
       <Modal modal={modal} setModal={setModal} />
     </>

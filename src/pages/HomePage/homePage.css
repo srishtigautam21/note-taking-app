@@ -45,8 +45,14 @@
     position: absolute;
     top: 11rem;
     right: 3rem;
+    /* border: none;
+    background-color: transparent; */
   }
-  .filter-icon-mediaquery:hover {
+  .filter-icon-mediaquery button {
+    border: none;
+    background-color: transparent;
+  }
+  .filter-icon-mediaquery button:hover {
     cursor: pointer;
     color: var(--COLOR-PRIMARY);
     /* width: 5rem;

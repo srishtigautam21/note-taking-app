@@ -15,7 +15,7 @@ const Modal = ({ modal, setModal }) => {
               X
             </button> */}
           <div className='modal-content border'>
-            <div className='btn-cross-modal'>
+            <div className='filter-btn-cross-modal'>
               <button className='btn-cross' onClick={() => setModal(false)}>
                 X
               </button>

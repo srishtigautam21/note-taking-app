@@ -1,7 +1,7 @@
-.btn-cross-modal {
+.filter-btn-cross-modal {
   position: absolute;
   top: 1rem;
-  right: 1.8rem;
+  right: 1.4rem;
 }
 .btn-cross {
   background-color: transparent;
@@ -17,6 +17,8 @@
   transform: translate(-50%, -50%); */
   background-color: var(--COLOR-WHITE);
   padding: 3rem;
+  position: relative;
+  box-shadow: 5px 5px 8px var(--BOX-SHADOW-LIGHTER);
 }
 .filter-modal-background {
   position: fixed;
@@ -39,5 +41,4 @@
   width: 100%;
   background-color: var(--COLOR-WHITE);
   padding: 1rem;
-  position: relative;
 }

@@ -1,4 +1,4 @@
-import { Navbar, Sidebar, TrashNote } from "../../component";
+import { Navbar, Sidebar, TrashNote, Footer } from "../../component";
 import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 import { useDeleteNote } from "../../context";
 import "./trash.css";
@@ -19,6 +19,9 @@ const Trash = () => {
               return <TrashNote key={note._id} deletedNotes={note} />;
             })}
           </div>
+        </div>
+        <div className='footer footer-mediaquery'>
+          <Footer />
         </div>
       </div>
     </>

@@ -1,4 +1,11 @@
-import { AddNote, Navbar, Sidebar, SavedNote, Modal } from "../../component";
+import {
+  AddNote,
+  Navbar,
+  Sidebar,
+  SavedNote,
+  Modal,
+  Footer,
+} from "../../component";
 import "./homePage.css";
 import { Filter } from "../../Asset/Svg/allsvg";
 import { useDocumentTitle } from "../../hooks/useDocumentTitle";
@@ -29,7 +36,9 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className='footer'></div>
+        <div className='footer footer-mediaquery'>
+          <Footer />
+        </div>
       </div>
       <Modal modal={modal} setModal={setModal} />
     </>

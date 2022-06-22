@@ -31,10 +31,14 @@
 .modal-mediaquery {
   display: none;
 }
+.footer {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   .grid-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.3fr 2fr 0.5fr;
+    grid-template-rows: 0.3fr 2fr 0.3fr;
     grid-template-areas:
       "navbar"
       " main-content"
@@ -59,5 +63,9 @@
     height: 5rem;
     border-radius: 50%;
     box-shadow: 2px 2px 5px var(--BOX-SHADOW-LIGHTER); */
+  }
+  .footer-mediaquery {
+    display: block;
+    grid-area: footer;
   }
 }

@@ -42,6 +42,7 @@
 }
 .title-input {
   width: 19vw;
+  /* 19 */
   max-height: 9vh;
 }
 .tags {
@@ -50,7 +51,8 @@
 }
 .priority {
   width: 16vw;
-  max-height: 9vh;
+  /* 16vw */
+  height: 4.5vh;
 }
 .save-btn {
   width: 10%;
@@ -122,4 +124,24 @@
   right: 0;
   bottom: 0;
   cursor: not-allowed;
+}
+.no-display {
+  display: none;
+}
+@media only screen and (max-width: 700px) {
+  .save-icon {
+    display: none;
+  }
+  .mediaquery-save-icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .disable-save-icon {
+    cursor: not-allowed;
+  }
 }

@@ -1,7 +1,7 @@
 import "./editNote.css";
 import ReactDom from "react-dom";
 import { useNote } from "../../context";
-import { ColorPallete } from "../../Asset/Svg/allsvg";
+import { ColorPallete, SaveIcon } from "../../Asset/Svg/allsvg";
 import { useState } from "react";
 import { colorsData } from "../Note/ColorData";
 
@@ -118,10 +118,16 @@ const EditNote = ({ setOpenModal, _id }) => {
             )}
           </div>
           <button
-            className='no-border save-btn'
+            className='no-border save-btn update-btn'
             onClick={() => saveEditNote(editNote)}
           >
             Update
+          </button>
+          <button
+            className='update-icon update-icon-mediaquery no-border'
+            onClick={() => saveEditNote(editNote)}
+          >
+            <SaveIcon />
           </button>
         </div>
       </div>

@@ -118,9 +118,12 @@ const AddNote = () => {
           {noteContent.title === "" ||
           noteContent.tags === "" ||
           noteContent.priority === "" ? (
-            <button className='no-border disable-btn' disabled>
-              Save
-            </button>
+            <>
+              <button className='no-border disable-btn' disabled>
+                Save
+              </button>
+              <button></button>
+            </>
           ) : (
             <button
               className='no-border save-btn'

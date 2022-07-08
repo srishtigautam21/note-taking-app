@@ -50,7 +50,8 @@
 }
 .priority {
   width: 16vw;
-  max-height: 9vh;
+
+  height: 4.5vh;
 }
 .save-btn {
   width: 10%;
@@ -60,7 +61,7 @@
   margin: 8px;
   border-radius: 1rem;
   position: absolute;
-  right: 0;
+  right: 5px;
   bottom: 0;
 }
 .save-btn:hover {
@@ -122,4 +123,24 @@
   right: 0;
   bottom: 0;
   cursor: not-allowed;
+}
+.no-display {
+  display: none;
+}
+@media only screen and (max-width: 700px) {
+  .save-icon {
+    display: none;
+  }
+  .mediaquery-save-icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .disable-save-icon {
+    cursor: not-allowed;
+  }
 }

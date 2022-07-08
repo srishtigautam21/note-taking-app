@@ -1,6 +1,6 @@
 .navbar {
   grid-area: navbar;
-  box-shadow: 2px 2px 10px var(--BOX-SHADOW-LIGHTER);
+  /* box-shadow: 2px 2px 10px var(--BOX-SHADOW-LIGHTER); */
 }
 .nav-padding {
   padding: 0 2rem 0 2rem;

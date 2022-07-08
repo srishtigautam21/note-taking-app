@@ -1,31 +1,21 @@
-import { NavLink } from "react-router-dom";
-import "./sidebar.css";
-import { useFilter, useNote } from "../../context";
+import Reactdom from "react-dom";
+import { useFilter } from "../../context";
+import "./modal.css";
 
-const Sidebar = () => {
+const Modal = ({ modal, setModal }) => {
   const { filterDispatch, filterState, initialFilterState } = useFilter();
-  const { notes } = useNote();
-  const activeStyle = ({ isActive }) => {
-    return isActive
-      ? "active-link md-pd aside-heading  "
-      : "inactive-link md-pd aside-heading  ";
-  };
 
-  return (
+  if (!modal) return null;
+  return Reactdom.createPortal(
     <>
-      <div className='sidebar md-margin sidebar-mediaquery'>
-        <NavLink to='/homePage' className={activeStyle}>
-          Home
-        </NavLink>
-        <NavLink to='/archive' className={activeStyle}>
-          Archive
-        </NavLink>
-        <NavLink to='/trash' className={activeStyle}>
-          Trash
-        </NavLink>
-        <div>
-          {/* Start of filter section */}
-          {notes && (
+      <div className='filter-modal-background'>
+        <div className='filter-modal-container'>
+          <div className='modal-content border'>
+            <div className='filter-btn-cross-modal'>
+              <button className='btn-cross' onClick={() => setModal(false)}>
+                X
+              </button>
+            </div>
             <div className='note-filter-sidebar md-pd'>
               <div className='clearAll-flex'>
                 <h3>Sort By Date</h3>
@@ -78,7 +68,10 @@ const Sidebar = () => {
                     type='checkbox'
                     className='filter-margin'
                     onChange={() =>
-                      filterDispatch({ type: "SORT_BY_TAGS", payload: "work" })
+                      filterDispatch({
+                        type: "SORT_BY_TAGS",
+                        payload: "work",
+                      })
                     }
                     checked={filterState.sortByTags.includes("work")}
                   />
@@ -173,10 +166,11 @@ const Sidebar = () => {
                 </label>
               </div>
             </div>
-          )}
+          </div>
         </div>
       </div>
-    </>
+    </>,
+    document.getElementById("modal")
   );
 };
-export { Sidebar };
+export { Modal };

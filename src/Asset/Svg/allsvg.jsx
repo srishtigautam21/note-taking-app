@@ -68,4 +68,34 @@ function ColorPallete(props) {
   );
 }
 
-export { UserIcon, DeleteIcon, ArchiveIcon, EditIcon, UndoIcon, ColorPallete };
+function Filter(props) {
+  return (
+    <svg width='22' height='22' viewBox='0 0 1024 1024' {...props}>
+      <path
+        fill='currentColor'
+        d='M384 523.392V928a32 32 0 0 0 46.336 28.608l192-96A32 32 0 0 0 640 832V523.392l280.768-343.104a32 32 0 1 0-49.536-40.576l-288 352A32 32 0 0 0 576 512v300.224l-128 64V512a32 32 0 0 0-7.232-20.288L195.52 192H704a32 32 0 1 0 0-64H128a32 32 0 0 0-24.768 52.288L384 523.392z'
+      ></path>
+    </svg>
+  );
+}
+
+function SaveIcon(props) {
+  return (
+    <svg width='22' height='22' viewBox='0 0 24 24' {...props}>
+      <path
+        fill='currentColor'
+        d='M11 16v-3H8v-2h3V8h2v3h3v2h-3v3Zm10.15.05l-2.6-1.5q.225-.6.338-1.238Q19 12.675 19 12q0-2.675-1.712-4.638Q15.575 5.4 13 5.05v-3q3.8.375 6.4 3.2Q22 8.075 22 12q0 1.1-.2 2.125t-.65 1.925ZM12 22q-2.075 0-3.9-.788q-1.825-.787-3.175-2.15q-1.35-1.362-2.137-3.187Q2 14.05 2 12q0-3.925 2.6-6.75t6.4-3.2v3q-2.575.35-4.287 2.312Q5 9.325 5 12q0 2.9 2.05 4.95Q9.1 19 12 19q1.65 0 3.088-.7q1.437-.7 2.412-1.9l2.6 1.5q-1.35 1.875-3.475 2.987Q14.5 22 12 22Z'
+      ></path>
+    </svg>
+  );
+}
+export {
+  UserIcon,
+  DeleteIcon,
+  ArchiveIcon,
+  EditIcon,
+  UndoIcon,
+  ColorPallete,
+  Filter,
+  SaveIcon,
+};

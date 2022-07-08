@@ -52,7 +52,6 @@ const SavedNote = ({ note }) => {
             onClick={() => editNoteFunc(_id)}
           >
             <EditIcon />
-            <span className='tooltiptext'>Edit note</span>
           </button>
           {openModal && <EditNote setOpenModal={setOpenModal} _id={_id} />}
         </div>

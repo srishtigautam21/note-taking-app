@@ -4,8 +4,8 @@ import { useAuth } from "../../context/AuthContext";
 import { useDocumentTitle } from "../../hooks/useDocumentTitle";
 const LoginPage = () => {
   useDocumentTitle("LoginPage");
-  const { loginInfo, setLoginInfo, loginHandler } = useAuth();
-  const { email, password } = loginInfo;
+  const { loginInfo, setloginInfo, loginHandler } = useAuth();
+
   return (
     <>
       <Navbar />
@@ -22,7 +22,7 @@ const LoginPage = () => {
             id='email-input'
             value={loginInfo.email}
             onChange={(e) =>
-              setLoginInfo((prev) => ({ ...prev, email: e.target.value }))
+              setloginInfo((prev) => ({ ...prev, email: e.target.value }))
             }
           />
           <label htmlFor='password' className='label-font-size'>
@@ -35,7 +35,7 @@ const LoginPage = () => {
             id='password'
             value={loginInfo.password}
             onChange={(e) =>
-              setLoginInfo((prev) => ({ ...prev, password: e.target.value }))
+              setloginInfo((prev) => ({ ...prev, password: e.target.value }))
             }
           />
           <div className='forgot-psswrd'>
@@ -44,17 +44,30 @@ const LoginPage = () => {
                 type='checkbox'
                 name='checkbox'
                 className='checkbox-size'
+                defaultChecked
               />
               Remember Me
             </label>
-            <p className='red-color forgot-psswrd-margin'>Forgot Password?</p>
+            <p
+              onClick={() => {
+                setloginInfo((prev) => ({
+                  ...prev,
+                  email: "testuser@notet.com",
+                }));
+                setloginInfo((prev) => ({ ...prev, password: "notet12345" }));
+              }}
+              className='test-login forgot-psswrd-margin'
+            >
+              Use Test Credentials
+            </p>
           </div>
 
           <button
+            type='submit'
             className='button login-button'
-            onClick={(e) => loginHandler(e, email, password)}
+            onClick={(e) => loginHandler(e)}
           >
-            Guest Login
+            Login
           </button>
         </form>
       </div>

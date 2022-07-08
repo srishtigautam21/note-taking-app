@@ -1,6 +1,5 @@
 .sidebar {
   grid-area: sidebar;
-
   display: flex;
   flex-direction: column;
 }
@@ -52,4 +51,9 @@
   cursor: pointer;
   text-decoration: underline;
   padding-right: 2rem;
+}
+@media only screen and (max-width: 700px) {
+  .sidebar-mediaquery {
+    display: none;
+  }
 }

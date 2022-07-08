@@ -42,3 +42,26 @@
 .image-container {
   width: 100%;
 }
+@media (max-width: 800px) {
+  .main-container {
+    display: flex;
+    flex-direction: column-reverse;
+
+    align-items: space-between;
+    overflow: hidden;
+  }
+  .landingPage-content-container {
+    display: flex;
+    flex-direction: column;
+
+    width: 80vw;
+    align-items: space-between;
+    justify-content: center;
+  }
+  .hero-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+  }
+}

@@ -5,6 +5,8 @@ import { SavedNote } from "./SavedNote/SavedNote";
 import { TrashNote } from "./TrashNote/TrashNote";
 import { ArchiveNote } from "./ArchiveNote/ArchiveNote";
 import { EditNote } from "./EditNote/EditNote";
+import { Modal } from "./Modal/Modal";
+import { Footer } from "./Footer/Footer";
 export {
   Navbar,
   Sidebar,
@@ -13,4 +15,6 @@ export {
   TrashNote,
   ArchiveNote,
   EditNote,
+  Modal,
+  Footer,
 };

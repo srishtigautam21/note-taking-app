@@ -1,7 +1,7 @@
 import "./note.css";
 import { useState, useEffect } from "react";
 import { useNote } from "../../context/NoteContext";
-import { ColorPallete } from "../../Asset/Svg/allsvg";
+import { ColorPallete, SaveIcon } from "../../Asset/Svg/allsvg";
 import { colorsData } from "./ColorData.jsx";
 
 const AddNote = () => {
@@ -118,20 +118,35 @@ const AddNote = () => {
           {noteContent.title === "" ||
           noteContent.tags === "" ||
           noteContent.priority === "" ? (
-            <button className='no-border disable-btn' disabled>
-              Save
-            </button>
+            <>
+              <button className='no-border disable-btn save-icon'>Save</button>
+              <button className='no-border no-display mediaquery-save-icon disable-save-icon'>
+                <SaveIcon />
+              </button>
+            </>
           ) : (
-            <button
-              className='no-border save-btn'
-              onClick={() => {
-                addNotes(noteContent);
-                setIsNoteVisisble((note) => !note);
-                setNoteContent(initialState);
-              }}
-            >
-              Save
-            </button>
+            <>
+              <button
+                className='no-border save-btn save-icon'
+                onClick={() => {
+                  addNotes(noteContent);
+                  setIsNoteVisisble((note) => !note);
+                  setNoteContent(initialState);
+                }}
+              >
+                Save
+              </button>
+              <button
+                className='no-border no-display mediaquery-save-icon'
+                onClick={() => {
+                  addNotes(noteContent);
+                  setIsNoteVisisble((note) => !note);
+                  setNoteContent(initialState);
+                }}
+              >
+                <SaveIcon />
+              </button>
+            </>
           )}
         </div>
       ) : (

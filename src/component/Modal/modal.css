@@ -11,10 +11,6 @@
   color: var(--COLOR-SOCIAL-ICON);
 }
 .filter-modal-container {
-  /* position: fixed; */
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   background-color: var(--COLOR-WHITE);
   padding: 3rem;
   position: relative;
@@ -32,7 +28,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* background-color: var(--BACKGROUND-MODAL); */
   z-index: 500;
 }
 .modal-content {

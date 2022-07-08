@@ -4,16 +4,12 @@ import "./modal.css";
 
 const Modal = ({ modal, setModal }) => {
   const { filterDispatch, filterState, initialFilterState } = useFilter();
-  // const { notes } = useNote();
+
   if (!modal) return null;
   return Reactdom.createPortal(
     <>
       <div className='filter-modal-background'>
         <div className='filter-modal-container'>
-          {/* <div className='btn-cross-modal'>
-            <button className='btn-cross' onClick={() => setModal(false)}>
-              X
-            </button> */}
           <div className='modal-content border'>
             <div className='filter-btn-cross-modal'>
               <button className='btn-cross' onClick={() => setModal(false)}>
@@ -171,7 +167,6 @@ const Modal = ({ modal, setModal }) => {
               </div>
             </div>
           </div>
-          {/* </div> */}
         </div>
       </div>
     </>,

@@ -42,7 +42,6 @@
 }
 .title-input {
   width: 19vw;
-  /* 19 */
   max-height: 9vh;
 }
 .tags {
@@ -51,7 +50,7 @@
 }
 .priority {
   width: 16vw;
-  /* 16vw */
+
   height: 4.5vh;
 }
 .save-btn {

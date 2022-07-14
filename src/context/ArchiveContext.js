@@ -1,6 +1,7 @@
 import { useContext, createContext, useState } from "react";
 import axios from "axios";
 import { useNote } from "./index";
+import { deleteNoteToast, retrieveNoteToast } from "../utils/toastify";
 const ArchiveContext = createContext({});
 
 const ArchiveProvider = ({ children }) => {
@@ -18,6 +19,7 @@ const ArchiveProvider = ({ children }) => {
       );
       setNotes(response.data.notes);
       setArchiveNote(response.data.archives);
+      deleteNoteToast("Note Archived");
     } catch (e) {
       console.error(e);
     }
@@ -34,6 +36,7 @@ const ArchiveProvider = ({ children }) => {
       );
       setArchiveNote(response.data.archives);
       setNotes(response.data.notes);
+      retrieveNoteToast("Note Retrieved");
     } catch (e) {
       console.error(e);
     }
@@ -48,6 +51,7 @@ const ArchiveProvider = ({ children }) => {
         config
       );
       setArchiveNote(response.data.archives);
+      deleteNoteToast("Note deleted");
     } catch (e) {
       console.error(e);
     }

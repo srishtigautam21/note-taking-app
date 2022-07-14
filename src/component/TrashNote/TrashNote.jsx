@@ -1,6 +1,7 @@
 import { DeleteIcon, UndoIcon } from "../../Asset/Svg/allsvg";
 import "./trashNote.css";
 import { useNote, useDeleteNote } from "../../context";
+import { retrieveNoteToast, deleteNoteToast } from "../../utils/toastify";
 
 const TrashNote = ({ deletedNotes }) => {
   const { title, priority, tags, mainContent, _id, date, noteColor } =
@@ -29,6 +30,7 @@ const TrashNote = ({ deletedNotes }) => {
           onClick={() => {
             addNotes(deletedNotes);
             deleteNotefromTrash(_id);
+            retrieveNoteToast("Note moved back to home");
           }}
         >
           <UndoIcon />
@@ -36,7 +38,10 @@ const TrashNote = ({ deletedNotes }) => {
         </button>
         <button
           className='note-btn tooltip'
-          onClick={() => deleteNotefromTrash(_id)}
+          onClick={() => {
+            deleteNotefromTrash(_id);
+            deleteNoteToast("Permanently deleted note");
+          }}
         >
           <DeleteIcon />
           <span className='tooltiptext'>Delete note</span>

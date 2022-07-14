@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Mockman from "mockman-js";
 import { RequireAuth } from "./utils/RequireAuth";
+import { ToastContainer } from "react-toastify";
 import {
   LandingPage,
   HomePage,
@@ -14,6 +15,7 @@ import {
 function App() {
   return (
     <>
+      <ToastContainer />
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route

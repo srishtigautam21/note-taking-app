@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import axios from "axios";
 import { useNote } from "./NoteContext";
+import { deleteNoteToast } from "../utils/toastify";
 
 const DeleteContext = createContext({});
 
@@ -21,6 +22,7 @@ const DeleteProvider = ({ children }) => {
     try {
       const response = await axios.delete(`/api/notes/${notesId}`, config);
       setNotes(response.data.notes);
+      deleteNoteToast("Note deleted & sent to trash");
     } catch (e) {
       console.error(e);
     }
